@@ -5,9 +5,9 @@ def hsv_to_cv(hsv):
     return np.array([int(hsv[0]/2.0), int(255.0*hsv[1]/100.0), int(255.0*hsv[2]/100.0)])
 
 #BLUE, límites en H, S y V
-# hsv_limits = [ [210,30,30], [270,100,100] ]
+hsv_limits = [ [210,30,30], [270,100,100] ]
 #GREEN, límites en H, S y V
-hsv_limits = [ [90,30,30], [150,100,100] ]
+# hsv_limits = [ [90,30,30], [150,100,100] ]
 
 # Crea un objeto de captura desde la cámara 0
 # Puede ser un archivo
