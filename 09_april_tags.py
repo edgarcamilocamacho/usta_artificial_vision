@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import apriltag
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)  
 
 aprildet = apriltag.Detector()
 
@@ -22,8 +22,9 @@ while(True):
     ret, frame = cap.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-    results = aprildet.detect(gray)    
+    results = aprildet.detect(gray)
     if len(results)>0:
+        print(results)
         for result in results:    
             center = ( int(result.center[0]), int(result.center[1]) )
             corners = result.corners.astype(int)
