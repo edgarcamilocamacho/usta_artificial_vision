@@ -32,7 +32,7 @@ def plt_cv_image(img, title='Image', hist=False, max_hist=1000):
                 plt.ylim([0,max_hist])
     plt.show()
 
-def plt_multiple_cv_images(imgs, titles=None):
+def plt_multiple_cv_images(imgs, titles=None, titles_ena=True):
     global plt
     num_imgs = len(imgs)
     if titles == None:
@@ -43,11 +43,15 @@ def plt_multiple_cv_images(imgs, titles=None):
         plt.subplot(1,num_imgs,i+1)
         if len(imgs[i].shape)==2:
             plt.imshow(imgs[i], cmap='gray')
-            plt.title(titles[i]), plt.xticks([]), plt.yticks([])
+            if titles_ena:
+                plt.title(titles[i])
+            plt.xticks([]), plt.yticks([])
         else:
             assert imgs[i].shape[2]==3, f'imgs[{i}].shape[2] must be 3 (RGB) if img has 3 dimensions'
             plt.imshow(imgs[i][...,::-1])
-            plt.title(titles[i]), plt.xticks([]), plt.yticks([])
+            if titles_ena:
+                plt.title(titles[i])
+            plt.xticks([]), plt.yticks([])
     plt.show()
     
 def add_cols_left(img, num_cols, left=True):
