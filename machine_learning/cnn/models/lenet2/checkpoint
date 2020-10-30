@@ -1,3 +1,0 @@
-model_checkpoint_path: "lenet2"
-all_model_checkpoint_paths: "../lenet/lenet"
-all_model_checkpoint_paths: "lenet2"
